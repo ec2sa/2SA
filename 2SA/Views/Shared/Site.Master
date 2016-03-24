@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="Helpers" %>
+<%@ Import Namespace="eArchiver.Helpers" %>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    
+    <link href='~/Content/Site.css' rel="stylesheet" type="text/css" />
+    <link href='~/Content/jqueryui/themes/ui-lightness/jquery-ui-1.8.7.custom.css' rel="stylesheet" type="text/css" /> 
+    <script src='<%=Url.Content("~/Scripts/MicrosoftAjax.js") %>' type="text/javascript"></script>
+    <script src='<%=Url.Content("~/Scripts/MicrosoftMvcAjax.js") %>' type="text/javascript"></script>
+    <script src='<%=Url.Content("~/Scripts/jquery-1.4.4.min.js") %>' type="text/javascript"></script>
+     <script src='<%=Url.Content("~/Scripts/jquery-ui-1.8.7.custom.min.js") %>' type="text/javascript"></script>
+         <script src='<%=Url.Content("~/Scripts/datepicker/jquery.ui.datepicker-pl.js")%>' type="text/javascript"></script>
+    <script src='<%=Url.Content("~/Scripts/datepicker/jquery.ui.datepicker-it.js")%>' type="text/javascript"></script>
+   <%--
+    <script src='<%=Url.Content("~/Scripts/ui.core.js") %>' type="text/javascript"></script>
+    <script src='<%=Url.Content("~/Scripts/ui.datepicker.js") %>' type="text/javascript"></script>
+    <script src='<%=Url.Content("~/Scripts/ui.dialog.min.js") %>' type="text/javascript"></script>
+     <script src='<%=Url.Content("~/Scripts/ui.accordion.min.js") %>' type="text/javascript"></script>
+      --%>
+    <script src='<%=Url.Content("~/Scripts/jquery-eArchiver.js") %>' type="text/javascript"></script>
+    <script src='<%=Url.Content("~/Scripts/stack.js") %>' type="text/javascript"></script>
+    <script src='<%=Url.Content("~/Scripts/date.js") %>' type="text/javascript"></script>
+   
+    <script src='<%=Url.Content("~/Scripts/jquery.querystring.js") %>' type="text/javascript"></script>
+    <script src='<%=Url.Content("~/Scripts/jquery.livequery.js") %>' type="text/javascript"></script>
+   <%-- <script src='<%=Url.Content("~/Scripts/uploadify/jquery.uploadify.v2.1.0.min.js") %>' type="text/javascript"></script>
+    <script src='<%=Url.Content("~/Scripts/uploadify/swfobject.js") %>' type="text/javascript"></script>--%>
+    <script src='<%=Url.Content("~/Scripts/MultiFile/jquery.MultiFile.js")%>' type="text/javascript"></script>
+    <script type="text/javascript">
+        var rootPath =  "<%= Url.Action("Index","Home") %>";
+        if(rootPath.charAt(rootPath.length-1) == "/")
+        {    
+            rootPath = rootPath.substring(0, rootPath.length-1);
+        }
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("#language").change(function () {
+
+                $("form[name='languageVersion']").submit();
+                //$(".dateField").datepicker();
+            });
+            var lang = $("#language").val();
+            if (lang == 'en') lang = '';
+            $.datepicker.setDefaults($.datepicker.regional[lang]);
+            $(".dateField").datepicker();
+        });
+</script>
+       <asp:ContentPlaceHolder ID="ScriptsContent" runat="server" />
+</head>
+<body>
+    <div class="page">
+        <div id="header">
+            <div id="title">
+                <h1>2SA</h1>
+            </div>
+            <div id="logindisplay">  
+            <% Html.RenderPartial("LogOnUserControl"); %>
+  
+
+            </div>
+            
+            <div id="menucontainer">
+            
+                <ul id="menu">
+                <%=Html.SectionLink(Resources.Strings.S15,"Index","Home",null,null,"active",false) %>
+                
+                <% if (HttpContext.Current.User.Identity.IsAuthenticated)
+                   { %>
+                <%=Html.SectionLink(Resources.Strings.S16, "Index", "Scans", null, null, "active", false)%>
+                <%=Html.SectionLink(Resources.Strings.S17, "Index", "Documents", new { p = 0 }, null, "active", false)%>
+                <%} %>
+                
+                <% if (eArchiver.Controllers.AppContext.AllowInfoTypeTwoRead())
+                   { %>
+                        <%=Html.SectionLink(Resources.Strings.S18, "Index", "Settings", null, null, "active", false)%>
+                <%} %>
+                <%if (eArchiver.Controllers.AppContext.IsAdmin())
+                  { %>
+                    
+                    <%=Html.SectionLink(Resources.Strings.S19, "Index", "Account", null, null, "active", false)%>
+                <%} %>
+                </ul>
+            </div>
+        </div>
+
+        <div id="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>  
+         <div id="footer">
+            <a href="http://www.ec2.pl">&copy; 2010 EC2 Sp. z o.o.</a>
+          </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="S1" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="S10" xml:space="preserve">
+    <value>Minimum password length</value>
+  </data>
+  <data name="S100" xml:space="preserve">
+    <value>Sender details</value>
+  </data>
+  <data name="S101" xml:space="preserve">
+    <value>Sender details</value>
+  </data>
+  <data name="S102" xml:space="preserve">
+    <value>Scan preview</value>
+  </data>
+  <data name="S103" xml:space="preserve">
+    <value>No data matched your criteria</value>
+  </data>
+  <data name="S104" xml:space="preserve">
+    <value>This document was not edited yet</value>
+  </data>
+  <data name="S105" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="S106" xml:space="preserve">
+    <value>Change password failed. Try again.</value>
+  </data>
+  <data name="S107" xml:space="preserve">
+    <value>Password changed.</value>
+  </data>
+  <data name="S108" xml:space="preserve">
+    <value>Login incorrect. Try again.</value>
+  </data>
+  <data name="S109" xml:space="preserve">
+    <value>This scan has versions</value>
+  </data>
+  <data name="S11" xml:space="preserve">
+    <value>Current password</value>
+  </data>
+  <data name="S110" xml:space="preserve">
+    <value>Preview document scan</value>
+  </data>
+  <data name="S111" xml:space="preserve">
+    <value>Location of the search phrase</value>
+  </data>
+  <data name="S112" xml:space="preserve">
+    <value>Uploading files</value>
+  </data>
+  <data name="S113" xml:space="preserve">
+    <value>Scan preview</value>
+  </data>
+  <data name="S114" xml:space="preserve">
+    <value>Remove scan from recycle failed.</value>
+  </data>
+  <data name="S115" xml:space="preserve">
+    <value>Przeglądaj wersje</value>
+  </data>
+  <data name="S116" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="S117" xml:space="preserve">
+    <value>Następna</value>
+  </data>
+  <data name="S118" xml:space="preserve">
+    <value>Main page</value>
+  </data>
+  <data name="S119" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="S12" xml:space="preserve">
+    <value>New password</value>
+  </data>
+  <data name="S120" xml:space="preserve">
+    <value>- choose -</value>
+  </data>
+  <data name="S121" xml:space="preserve">
+    <value>Sender</value>
+  </data>
+  <data name="S122" xml:space="preserve">
+    <value>Edit Sender</value>
+  </data>
+  <data name="S123" xml:space="preserve">
+    <value>Download marked</value>
+  </data>
+  <data name="S124" xml:space="preserve">
+    <value>Split a file</value>
+  </data>
+  <data name="S13" xml:space="preserve">
+    <value>Re-type new password</value>
+  </data>
+  <data name="S14" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="S15" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="S16" xml:space="preserve">
+    <value>Scans</value>
+  </data>
+  <data name="S17" xml:space="preserve">
+    <value>Documents</value>
+  </data>
+  <data name="S18" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="S19" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="S2" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="S20" xml:space="preserve">
+    <value>Available scans</value>
+  </data>
+  <data name="S21" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="S22" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="S23" xml:space="preserve">
+    <value>Add from drive</value>
+  </data>
+  <data name="S24" xml:space="preserve">
+    <value>Scan recycle</value>
+  </data>
+  <data name="S25" xml:space="preserve">
+    <value>To recycle</value>
+  </data>
+  <data name="S26" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="S27" xml:space="preserve">
+    <value>Deselect</value>
+  </data>
+  <data name="S28" xml:space="preserve">
+    <value>Main data</value>
+  </data>
+  <data name="S29" xml:space="preserve">
+    <value>Document type</value>
+  </data>
+  <data name="S3" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="S30" xml:space="preserve">
+    <value>Briefcase</value>
+  </data>
+  <data name="S31" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="S32" xml:space="preserve">
+    <value>Keywords</value>
+  </data>
+  <data name="S33" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="S34" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="S35" xml:space="preserve">
+    <value>Shop</value>
+  </data>
+  <data name="S36" xml:space="preserve">
+    <value>Additional data</value>
+  </data>
+  <data name="S37" xml:space="preserve">
+    <value>Senders</value>
+  </data>
+  <data name="S38" xml:space="preserve">
+    <value>List of available</value>
+  </data>
+  <data name="S39" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="S4" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="S40" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="S41" xml:space="preserve">
+    <value>Additional information</value>
+  </data>
+  <data name="S42" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="S43" xml:space="preserve">
+    <value>New sender</value>
+  </data>
+  <data name="S44" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="S45" xml:space="preserve">
+    <value>Surname</value>
+  </data>
+  <data name="S46" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="S47" xml:space="preserve">
+    <value>NIP</value>
+  </data>
+  <data name="S48" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="S49" xml:space="preserve">
+    <value>E-mail address</value>
+  </data>
+  <data name="S5" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="S50" xml:space="preserve">
+    <value>Home phone</value>
+  </data>
+  <data name="S51" xml:space="preserve">
+    <value>Office phone</value>
+  </data>
+  <data name="S52" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="S53" xml:space="preserve">
+    <value>Mobile phone</value>
+  </data>
+  <data name="S54" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="S55" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="S56" xml:space="preserve">
+    <value>Street</value>
+  </data>
+  <data name="S57" xml:space="preserve">
+    <value>House</value>
+  </data>
+  <data name="S58" xml:space="preserve">
+    <value>Suite</value>
+  </data>
+  <data name="S59" xml:space="preserve">
+    <value>Postal code</value>
+  </data>
+  <data name="S6" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="S60" xml:space="preserve">
+    <value>Place</value>
+  </data>
+  <data name="S61" xml:space="preserve">
+    <value>Date:</value>
+  </data>
+  <data name="S62" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="S63" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="S64" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="S65" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="S66" xml:space="preserve">
+    <value>Preview last selected scan</value>
+  </data>
+  <data name="S67" xml:space="preserve">
+    <value>Create document</value>
+  </data>
+  <data name="S68" xml:space="preserve">
+    <value>Clear form</value>
+  </data>
+  <data name="S69" xml:space="preserve">
+    <value>Go to last created document</value>
+  </data>
+  <data name="S7" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="S70" xml:space="preserve">
+    <value>Add scan</value>
+  </data>
+  <data name="S71" xml:space="preserve">
+    <value>Select file to add</value>
+  </data>
+  <data name="S72" xml:space="preserve">
+    <value>Back to scan list</value>
+  </data>
+  <data name="S73" xml:space="preserve">
+    <value>Return to scan list</value>
+  </data>
+  <data name="S74" xml:space="preserve">
+    <value>Remove from recycle</value>
+  </data>
+  <data name="S75" xml:space="preserve">
+    <value>Pobrany</value>
+  </data>
+  <data name="S76" xml:space="preserve">
+    <value>Time:</value>
+  </data>
+  <data name="S77" xml:space="preserve">
+    <value>Search parameters</value>
+  </data>
+  <data name="S78" xml:space="preserve">
+    <value>Create date [from] - [to]</value>
+  </data>
+  <data name="S79" xml:space="preserve">
+    <value>Document date [from] - [to]</value>
+  </data>
+  <data name="S8" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="S80" xml:space="preserve">
+    <value>Phrase in text</value>
+  </data>
+  <data name="S81" xml:space="preserve">
+    <value>Elements count on page</value>
+  </data>
+  <data name="S82" xml:space="preserve">
+    <value>Search document</value>
+  </data>
+  <data name="S83" xml:space="preserve">
+    <value>Search results</value>
+  </data>
+  <data name="S84" xml:space="preserve">
+    <value>Create date</value>
+  </data>
+  <data name="S85" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="S86" xml:space="preserve">
+    <value>Page [x] of [y]</value>
+  </data>
+  <data name="S87" xml:space="preserve">
+    <value>Back to search result</value>
+  </data>
+  <data name="S88" xml:space="preserve">
+    <value>Edit document</value>
+  </data>
+  <data name="S89" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="S9" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="S90" xml:space="preserve">
+    <value>Edit history</value>
+  </data>
+  <data name="S91" xml:space="preserve">
+    <value>Document data</value>
+  </data>
+  <data name="S92" xml:space="preserve">
+    <value>Add scan from list</value>
+  </data>
+  <data name="S93" xml:space="preserve">
+    <value>Add scan from drive</value>
+  </data>
+  <data name="S94" xml:space="preserve">
+    <value>Add version from list</value>
+  </data>
+  <data name="S95" xml:space="preserve">
+    <value>Add version from drive</value>
+  </data>
+  <data name="S96" xml:space="preserve">
+    <value>Select scans</value>
+  </data>
+  <data name="S97" xml:space="preserve">
+    <value>Document changes history</value>
+  </data>
+  <data name="S98" xml:space="preserve">
+    <value>Date of change</value>
+  </data>
+  <data name="S99" xml:space="preserve">
+    <value>Editor</value>
+  </data>
+  <data name="ValidationFieldMustBeNumeric" xml:space="preserve">
+    <value>Podana wartość musi być numeryczna</value>
+  </data>
+</root>

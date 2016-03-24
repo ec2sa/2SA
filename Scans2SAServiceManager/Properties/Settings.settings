@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Scans2SAServiceManager.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="WatchDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">d:\scans</Value>
+    </Setting>
+    <Setting Name="BackupDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">d:\scansBackup</Value>
+    </Setting>
+    <Setting Name="ServiceUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://demo.ec2.pl/pertom/rs.asmx</Value>
+    </Setting>
+    <Setting Name="Username" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rsUser</Value>
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rsPass</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

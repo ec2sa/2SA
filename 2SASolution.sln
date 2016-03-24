@@ -1,0 +1,86 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2SA", "2SA\2SA.csproj", "{95D9A641-D092-4032-9880-831CAF06AC3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScanManager", "TiffManager\ScanManager.csproj", "{BF758D1B-C05A-4B68-8A54-E9A6205C10FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scans2SAService", "Scans2SAService\Scans2SAService.csproj", "{BB6F4733-3A75-474A-8BE4-5C069162D566}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scans2SAServiceManager", "Scans2SAServiceManager\Scans2SAServiceManager.csproj", "{8B988F87-8A79-4559-997A-7FC3F0A9D47A}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Scans2SAServiceManagerSetup", "Scans2SAServiceManagerSetup\Scans2SAServiceManagerSetup.vdproj", "{36456372-B61E-4A8E-AE56-272C3EC04224}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCRLibrary", "OCRLibrary\OCRLibrary.csproj", "{94645EFC-E472-440B-81CD-1F4E9708E939}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCRService", "OCRService\OCRService.csproj", "{022EA9A0-B3A4-4515-8B76-03DDFA3EB74A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2SARES", "2SARES\2SARES.csproj", "{5E7A0F3C-2989-43C9-A973-1A4F6ADDD5D2}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Service|Any CPU = Service|Any CPU
+		webapp|Any CPU = webapp|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95D9A641-D092-4032-9880-831CAF06AC3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95D9A641-D092-4032-9880-831CAF06AC3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95D9A641-D092-4032-9880-831CAF06AC3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95D9A641-D092-4032-9880-831CAF06AC3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95D9A641-D092-4032-9880-831CAF06AC3B}.Service|Any CPU.ActiveCfg = Service|Any CPU
+		{95D9A641-D092-4032-9880-831CAF06AC3B}.webapp|Any CPU.ActiveCfg = webapp|Any CPU
+		{95D9A641-D092-4032-9880-831CAF06AC3B}.webapp|Any CPU.Build.0 = webapp|Any CPU
+		{BF758D1B-C05A-4B68-8A54-E9A6205C10FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF758D1B-C05A-4B68-8A54-E9A6205C10FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF758D1B-C05A-4B68-8A54-E9A6205C10FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF758D1B-C05A-4B68-8A54-E9A6205C10FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF758D1B-C05A-4B68-8A54-E9A6205C10FE}.Service|Any CPU.ActiveCfg = Service|Any CPU
+		{BF758D1B-C05A-4B68-8A54-E9A6205C10FE}.webapp|Any CPU.ActiveCfg = webapp|Any CPU
+		{BF758D1B-C05A-4B68-8A54-E9A6205C10FE}.webapp|Any CPU.Build.0 = webapp|Any CPU
+		{BB6F4733-3A75-474A-8BE4-5C069162D566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB6F4733-3A75-474A-8BE4-5C069162D566}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB6F4733-3A75-474A-8BE4-5C069162D566}.Service|Any CPU.ActiveCfg = Service|Any CPU
+		{BB6F4733-3A75-474A-8BE4-5C069162D566}.Service|Any CPU.Build.0 = Service|Any CPU
+		{BB6F4733-3A75-474A-8BE4-5C069162D566}.webapp|Any CPU.ActiveCfg = webapp|Any CPU
+		{8B988F87-8A79-4559-997A-7FC3F0A9D47A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B988F87-8A79-4559-997A-7FC3F0A9D47A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B988F87-8A79-4559-997A-7FC3F0A9D47A}.Service|Any CPU.ActiveCfg = Service|Any CPU
+		{8B988F87-8A79-4559-997A-7FC3F0A9D47A}.Service|Any CPU.Build.0 = Service|Any CPU
+		{8B988F87-8A79-4559-997A-7FC3F0A9D47A}.webapp|Any CPU.ActiveCfg = webapp|Any CPU
+		{36456372-B61E-4A8E-AE56-272C3EC04224}.Debug|Any CPU.ActiveCfg = Debug
+		{36456372-B61E-4A8E-AE56-272C3EC04224}.Release|Any CPU.ActiveCfg = Release
+		{36456372-B61E-4A8E-AE56-272C3EC04224}.Service|Any CPU.ActiveCfg = Release
+		{36456372-B61E-4A8E-AE56-272C3EC04224}.Service|Any CPU.Build.0 = Release
+		{36456372-B61E-4A8E-AE56-272C3EC04224}.webapp|Any CPU.ActiveCfg = webapp
+		{94645EFC-E472-440B-81CD-1F4E9708E939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94645EFC-E472-440B-81CD-1F4E9708E939}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94645EFC-E472-440B-81CD-1F4E9708E939}.Service|Any CPU.ActiveCfg = Release|Any CPU
+		{94645EFC-E472-440B-81CD-1F4E9708E939}.Service|Any CPU.Build.0 = Release|Any CPU
+		{94645EFC-E472-440B-81CD-1F4E9708E939}.webapp|Any CPU.ActiveCfg = Release|Any CPU
+		{94645EFC-E472-440B-81CD-1F4E9708E939}.webapp|Any CPU.Build.0 = Release|Any CPU
+		{022EA9A0-B3A4-4515-8B76-03DDFA3EB74A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{022EA9A0-B3A4-4515-8B76-03DDFA3EB74A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{022EA9A0-B3A4-4515-8B76-03DDFA3EB74A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{022EA9A0-B3A4-4515-8B76-03DDFA3EB74A}.Service|Any CPU.ActiveCfg = Release|Any CPU
+		{022EA9A0-B3A4-4515-8B76-03DDFA3EB74A}.Service|Any CPU.Build.0 = Release|Any CPU
+		{022EA9A0-B3A4-4515-8B76-03DDFA3EB74A}.webapp|Any CPU.ActiveCfg = Release|Any CPU
+		{022EA9A0-B3A4-4515-8B76-03DDFA3EB74A}.webapp|Any CPU.Build.0 = Release|Any CPU
+		{5E7A0F3C-2989-43C9-A973-1A4F6ADDD5D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E7A0F3C-2989-43C9-A973-1A4F6ADDD5D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E7A0F3C-2989-43C9-A973-1A4F6ADDD5D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E7A0F3C-2989-43C9-A973-1A4F6ADDD5D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E7A0F3C-2989-43C9-A973-1A4F6ADDD5D2}.Service|Any CPU.ActiveCfg = Release|Any CPU
+		{5E7A0F3C-2989-43C9-A973-1A4F6ADDD5D2}.Service|Any CPU.Build.0 = Release|Any CPU
+		{5E7A0F3C-2989-43C9-A973-1A4F6ADDD5D2}.webapp|Any CPU.ActiveCfg = Release|Any CPU
+		{5E7A0F3C-2989-43C9-A973-1A4F6ADDD5D2}.webapp|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

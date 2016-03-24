@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="2SADev" Class="EArchiverDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.10.10.222;Initial Catalog=2SAimi;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ApplicationServices" Provider="System.Data.SqlClient" />
+  <Table Name="Configuration.tUsersInGroups" Member="UsersInGroups">
+    <Type Name="UsersInGroup">
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GroupId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Group_UsersInGroup" Member="Group" ThisKey="GroupId" OtherKey="GroupId" Type="Group" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Configuration.tGroups" Member="Groups">
+    <Type Name="Group">
+      <Column Name="GroupId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GroupName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="ClientID" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Association Name="Group_UsersInGroup" Member="UsersInGroups" ThisKey="GroupId" OtherKey="GroupId" Type="UsersInGroup" />
+      <Association Name="Group_GroupsInRole" Member="GroupsInRoles" ThisKey="GroupId" OtherKey="GroupId" Type="GroupsInRole" />
+      <Association Name="Client_Group" Member="Client" ThisKey="ClientID" OtherKey="ClientID" Type="Client" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Configuration.tGroupsInRole" Member="GroupsInRoles">
+    <Type Name="GroupsInRole">
+      <Column Name="GroupId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Group_GroupsInRole" Member="Group" ThisKey="GroupId" OtherKey="GroupId" Type="Group" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Documents.tScanPreview" Member="ScanPreviews">
+    <Type Name="ScanPreview">
+      <Column Name="ScanPreviewID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ScanID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ScanPreviewContent" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" IsDelayLoaded="true" />
+      <Column Name="MimeType" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Scan_ScanPreview" Member="Scan" ThisKey="ScanID" OtherKey="ScanID" Type="Scan" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Documents.vAvailableScans" Member="AvailableScans">
+    <Type Name="AvailableScan">
+      <Column Name="ScanID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ScanPreviewID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="FileName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MimeType" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PreviewMimeType" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ScanPreviewContent" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" IsDelayLoaded="true" />
+      <Column Name="ImportDate" Type="System.DateTime" DbType="smalldatetime not null" CanBeNull="false" />
+      <Column Name="ClientID" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="PageCount" Type="System.Int32" DbType="int" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Dictionaries.tCategory" Member="Categories">
+    <Type Name="Category">
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ClientID" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Association Name="Category_Type" Member="Types" ThisKey="CategoryID" OtherKey="CategoryID" Type="Type" />
+      <Association Name="Category_InfoTypeOne" Member="InfoTypeOnes" ThisKey="CategoryID" OtherKey="CategoryID" Type="InfoTypeOne" />
+      <Association Name="Client_Category" Member="Client" ThisKey="ClientID" OtherKey="ClientID" Type="Client" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Dictionaries.tType" Member="Types">
+    <Type Name="Type">
+      <Column Name="TypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ClientID" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Association Name="Type_InfoTypeOne" Member="InfoTypeOnes" ThisKey="TypeID" OtherKey="TypeID" Type="InfoTypeOne" />
+      <Association Name="Category_Type" Member="Category" ThisKey="CategoryID" OtherKey="CategoryID" Type="Category" IsForeignKey="true" />
+      <Association Name="Client_Type" Member="Client" ThisKey="ClientID" OtherKey="ClientID" Type="Client" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Documents.tScan" Member="Scans">
+    <Type Name="Scan">
+      <Column Name="ScanID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ScanContent" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" IsDelayLoaded="true" />
+      <Column Name="FileName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MimeType" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="importDate" AutoSync="Never" Type="System.DateTime" DbType="DateTime" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="isActive" AutoSync="Never" Type="System.Boolean" DbType="Bit NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocumentID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="OriginalScanID" Type="System.Guid" DbType="UniqueIdentifier " CanBeNull="true" />
+      <Column Name="ScanZoom" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" IsDelayLoaded="true" />
+      <Column Name="AssignmentDate" Type="System.DateTime" DbType="datetime" CanBeNull="true" />
+      <Column Name="ClientID" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="PageCount" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Association Name="Scan_ScanPreview" Member="ScanPreviews" ThisKey="ScanID" OtherKey="ScanID" Type="ScanPreview" />
+      <Association Name="Scan_OcrContent" Member="OcrContents" ThisKey="ScanID" OtherKey="ScanID" Type="OcrContent" />
+      <Association Name="Client_Scan" Member="Client" ThisKey="ClientID" OtherKey="ClientID" Type="Client" IsForeignKey="true" />
+      <Association Name="Document_Scan" Member="Document" ThisKey="DocumentID" OtherKey="DocumentID" Type="Document" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Documents.tInfoTypeTwo" Member="InfoTypeTwos">
+    <Type Name="InfoTypeTwo">
+      <Column Name="TypeTwoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocumentID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Flag1" Type="System.Boolean" DbType="bit " CanBeNull="false" />
+      <Association Name="Document_InfoTypeTwo" Member="Document" ThisKey="DocumentID" OtherKey="DocumentID" Type="Document" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Dictionaries.tHeader" Member="Headers">
+    <Type Name="Header">
+      <Column Name="HeaderKey" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HeaderValue" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Documents.tClient" Member="Clients">
+    <Type Name="Client">
+      <Column Name="ClientID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClientName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ClientDescription" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="ClientPrefix" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Client_Group" Member="Groups" ThisKey="ClientID" OtherKey="ClientID" Type="Group" />
+      <Association Name="Client_Category" Member="Categories" ThisKey="ClientID" OtherKey="ClientID" Type="Category" />
+      <Association Name="Client_Type" Member="Types" ThisKey="ClientID" OtherKey="ClientID" Type="Type" />
+      <Association Name="Client_Scan" Member="Scans" ThisKey="ClientID" OtherKey="ClientID" Type="Scan" />
+      <Association Name="Client_UsersInClient" Member="UsersInClients" ThisKey="ClientID" OtherKey="ClientID" Type="UsersInClient" />
+      <Association Name="Client_Type2" Member="Type2s" ThisKey="ClientID" OtherKey="ClientID" Type="Type2" />
+      <Association Name="Client_Sender" Member="Senders" Storage="_tSenders" ThisKey="ClientID" OtherKey="ClientID" Type="Sender" />
+      <Association Name="Client_Document" Member="Documents" ThisKey="ClientID" OtherKey="ClientID" Type="Document" />
+    </Type>
+  </Table>
+  <Table Name="Configuration.tUsersInClients" Member="UsersInClients">
+    <Type Name="UsersInClient">
+      <Column Name="UserID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ClientID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Client_UsersInClient" Member="Client" ThisKey="ClientID" OtherKey="ClientID" Type="Client" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OCRText" Member="OcrContents">
+    <Type Name="OcrContent">
+      <Column Name="OCRTextID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ScanID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="PageNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="textContent" Member="TextContent" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Scan_OcrContent" Member="Scan" ThisKey="ScanID" OtherKey="ScanID" Type="Scan" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OCRLog" Member="OcrLogEntries">
+    <Type Name="OcrLogEntry">
+      <Column Name="OCRLogDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ScansOCRed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ScansUnOCRable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ScansTotal" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ScansPagesOCRed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ScansRemainedToOCR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Dictionaries.tType2" Member="Type2s">
+    <Type Name="Type2">
+      <Column Name="Type2ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ClientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Type2_InfoTypeOne" Member="InfoTypeOnes" ThisKey="Type2ID" OtherKey="Type2ID" Type="InfoTypeOne" />
+      <Association Name="Client_Type2" Member="Client" ThisKey="ClientID" OtherKey="ClientID" Type="Client" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Documents.tInfoTypeOne" Member="InfoTypeOnes">
+    <Type Name="InfoTypeOne">
+      <Column Name="TypeOneID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocumentID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="DocumentNumber" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="CaseNumber" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Type2ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tags" Member="Tags" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="Type2_InfoTypeOne" Member="Type2" ThisKey="Type2ID" OtherKey="Type2ID" Type="Type2" IsForeignKey="true" />
+      <Association Name="Category_InfoTypeOne" Member="Category" ThisKey="CategoryID" OtherKey="CategoryID" Type="Category" IsForeignKey="true" />
+      <Association Name="Type_InfoTypeOne" Member="Type" ThisKey="TypeID" OtherKey="TypeID" Type="Type" IsForeignKey="true" />
+      <Association Name="Document_InfoTypeOne" Member="Document" ThisKey="DocumentID" OtherKey="DocumentID" Type="Document" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Documents.vDocumentInfo" Member="DocumentInfos">
+    <Type Name="DocumentInfo">
+      <Column Name="DocumentID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TypeOneID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TypeTwoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DocumentNumber" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="CaseNumber" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="ClientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tags" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Type2ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sender" Type="System.String" DbType="varchar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Documents.tDocumentSender" Member="DocumentSenders">
+    <Type Name="DocumentSender">
+      <Column Name="DocumentID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SenderID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Sender_DocumentSender" Member="Sender" Storage="_tSender" ThisKey="SenderID" OtherKey="SenderID" Type="Sender" IsForeignKey="true" />
+      <Association Name="Document_DocumentSender" Member="Document" ThisKey="DocumentID" OtherKey="DocumentID" Type="Document" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Documents.tSender" Member="Senders">
+    <Type Name="Sender">
+      <Column Name="SenderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Company" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Position" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Webpage" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="PhoneWork" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneHome" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneMobile" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FaxWork" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ClientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PostCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Post" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Street" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Building" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Flat" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="Sender_DocumentSender" Member="DocumentSenders" ThisKey="SenderID" OtherKey="SenderID" Type="DocumentSender" />
+      <Association Name="Client_Sender" Member="Client" ThisKey="ClientID" OtherKey="ClientID" Type="Client" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Documents.tDocument" Member="Documents">
+    <Type Name="Document">
+      <Column Name="DocumentID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Author" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Editor" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ClientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Document_Scan" Member="Scans" ThisKey="DocumentID" OtherKey="DocumentID" Type="Scan" />
+      <Association Name="Document_InfoTypeTwo" Member="InfoTypeTwos" ThisKey="DocumentID" OtherKey="DocumentID" Type="InfoTypeTwo" />
+      <Association Name="Document_InfoTypeOne" Member="InfoTypeOnes" ThisKey="DocumentID" OtherKey="DocumentID" Type="InfoTypeOne" />
+      <Association Name="Document_DocumentSender" Member="DocumentSenders" ThisKey="DocumentID" OtherKey="DocumentID" Type="DocumentSender" />
+      <Association Name="Client_Document" Member="Client" ThisKey="ClientID" OtherKey="ClientID" Type="Client" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Documents.tDocumentInfoHistory" Member="DocumentHistories">
+    <Type Name="DocumentHistory">
+      <Column Name="DocumentInfoHistoryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Editor" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="EntryDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DocumentID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="DocumentNumber" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CaseNumber" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DocumentCategory" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DocumentType" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Sender" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="DocumentType2" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Tags" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="Configuration.pRemoveUserFromGroup" Method="RemoveUserFromGroup">
+    <Parameter Name="UserId" Parameter="userId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="GroupId" Parameter="groupId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Configuration.pAddRoleToGroup" Method="AddRoleToGroup">
+    <Parameter Name="GroupId" Parameter="groupId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="RoleName" Parameter="roleName" Type="System.String" DbType="NVarChar(256)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Configuration.pAddUserToGroup" Method="AddUserToGroup">
+    <Parameter Name="UserId" Parameter="userId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="GroupId" Parameter="groupId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Configuration.pRemoveRoleFromGroup" Method="RemoveRoleFromGroup">
+    <Parameter Name="RoleName" Parameter="roleName" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="GroupId" Parameter="groupId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Configuration.pGetGroupRoles" Method="GetGroupRoles">
+    <Parameter Name="GroupId" Parameter="groupId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="pGetGroupRolesResult">
+      <Column Name="RoleName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Dictionaries.pDeleteCategory" Method="DeleteCategory">
+    <Parameter Name="CategoryID" Parameter="categoryID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Dictionaries.pDeleteType" Method="DeleteType">
+    <Parameter Name="TypeID" Parameter="typeID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Documents.pAddScanToRecycleBin" Method="AddScanToRecycleBin">
+    <Parameter Name="ScanGuid" Parameter="scanGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Documents.pDeleteScanFromRecycleBin" Method="DeleteScanFromRecycleBin">
+    <Parameter Name="ScanGuid" Parameter="scanGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Documents.pRestoreScanFromRecycleBin" Method="RestoreScanFromRecycleBin">
+    <Parameter Name="ScanGuid" Parameter="scanGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Documents.pGetScansFromDocument" Method="GetScansFromDocument">
+    <Parameter Name="documentID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="pGetScansFromDocumentResult">
+      <Column Name="scanID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="hasVersions" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Documents.pGetScanSiblings" Method="GetScanSiblings">
+    <Parameter Name="scanid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="pGetScanSiblingsResult">
+      <Column Name="scanID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="scanType" Type="System.Char" DbType="VarChar(1)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Documents.pGetCID" Method="GetCID">
+    <Parameter Name="userGuid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="pGetCIDResult">
+      <Column Name="ClientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Documents.pCreateDocument" Method="CreateDocument">
+    <Parameter Name="Author" Parameter="author" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="ClientID" Parameter="clientID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DocumentID" Parameter="documentID" Type="System.Guid" DbType="UniqueIdentifier" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Documents.pCreateClient" Method="CreateClient">
+    <Parameter Name="ClientName" Parameter="clientName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="ClientDescription" Parameter="clientDescription" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="ClientPrefix" Parameter="clientPrefix" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Configuration.pGetUserRolesInClient" Method="GetUserRolesInClient">
+    <Parameter Name="userID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="clientID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="pGetUserRolesInClientResult">
+      <Column Name="RoleName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Configuration.pCreateGroup" Method="CreateGroup">
+    <Parameter Name="GroupName" Parameter="groupName" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="clientID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NewId" Parameter="newId" Type="System.Guid" DbType="UniqueIdentifier" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Documents.pCheckQuota" Method="CheckQuota">
+    <Parameter Name="propertyName" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="pCheckQuotaResult">
+      <Column Name="allowedCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="currentCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="isViolated" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pOCRGetConfiguration" Method="OCRGetConfiguration">
+    <ElementType Name="pOCRGetConfigurationResult">
+      <Column Name="OCRStartHour" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="OCREndHour" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="OCREnabled" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pOCRSaveConfiguration" Method="OCRSaveConfiguration">
+    <Parameter Name="ocrStartHour" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="ocrEndHour" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="ocrEnabled" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.pOCRSaveTextContent" Method="OCRSaveTextContent">
+    <Parameter Name="ScanID" Parameter="scanID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="textContent" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Documents.pAddScanVersion" Method="AddScanVersion">
+    <Parameter Name="originalScanID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="fileName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="mimeType" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="fileContent" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
+    <Parameter Name="previewContent" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
+    <Parameter Name="previewMimeType" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="zoomContent" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
+    <Parameter Name="clientID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Dictionaries.pDeleteType2" Method="DeleteType2">
+    <Parameter Name="Type2ID" Parameter="type2ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

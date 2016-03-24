@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="S1" xml:space="preserve">
+    <value>Zaloguj</value>
+  </data>
+  <data name="S10" xml:space="preserve">
+    <value>Wymagana liczba znaków nowego hasła to</value>
+  </data>
+  <data name="S100" xml:space="preserve">
+    <value>Szczegóły nadawcy</value>
+  </data>
+  <data name="S101" xml:space="preserve">
+    <value>Dane szczegółowe nadawcy</value>
+  </data>
+  <data name="S102" xml:space="preserve">
+    <value>Pogląd skanu</value>
+  </data>
+  <data name="S103" xml:space="preserve">
+    <value>Brak danych spełniających podane kryteria</value>
+  </data>
+  <data name="S104" xml:space="preserve">
+    <value>Ten dokument nie był jeszcze edytowany</value>
+  </data>
+  <data name="S105" xml:space="preserve">
+    <value>Podgląd</value>
+  </data>
+  <data name="S106" xml:space="preserve">
+    <value>Zmiana hasła nie powiodła się. Popraw błędy i spróbuj ponownie</value>
+  </data>
+  <data name="S107" xml:space="preserve">
+    <value>Twoje hasło zostało pomyślnie zmienione</value>
+  </data>
+  <data name="S108" xml:space="preserve">
+    <value>Logowanie nie powiodło się. Popraw błędy i spróbuj ponownie</value>
+  </data>
+  <data name="S109" xml:space="preserve">
+    <value>Ten skan posiada wersje</value>
+  </data>
+  <data name="S11" xml:space="preserve">
+    <value>Obecne hasło</value>
+  </data>
+  <data name="S110" xml:space="preserve">
+    <value>Podgląd skanów dokumentu</value>
+  </data>
+  <data name="S111" xml:space="preserve">
+    <value>Lokalizacja wyszukiwanej frazy</value>
+  </data>
+  <data name="S112" xml:space="preserve">
+    <value>Ładowanie plików</value>
+  </data>
+  <data name="S113" xml:space="preserve">
+    <value>podgląd pliku</value>
+  </data>
+  <data name="S114" xml:space="preserve">
+    <value>Nie udało się usunąć skanu z kosza.</value>
+  </data>
+  <data name="S115" xml:space="preserve">
+    <value>Przeglądaj wersje</value>
+  </data>
+  <data name="S116" xml:space="preserve">
+    <value>Poprzednia</value>
+  </data>
+  <data name="S117" xml:space="preserve">
+    <value>Następna</value>
+  </data>
+  <data name="S118" xml:space="preserve">
+    <value>Strona główna aplikacji eArchiver</value>
+  </data>
+  <data name="S119" xml:space="preserve">
+    <value>Zmiana hasła</value>
+  </data>
+  <data name="S12" xml:space="preserve">
+    <value>Nowe hasło</value>
+  </data>
+  <data name="S120" xml:space="preserve">
+    <value>- wybierz -</value>
+  </data>
+  <data name="S121" xml:space="preserve">
+    <value>Nadawca</value>
+  </data>
+  <data name="S122" xml:space="preserve">
+    <value>Edycja nadawcy</value>
+  </data>
+  <data name="S123" xml:space="preserve">
+    <value>Pobierz oznakowany</value>
+  </data>
+  <data name="S124" xml:space="preserve">
+    <value>Podziel plik</value>
+  </data>
+  <data name="S13" xml:space="preserve">
+    <value>Powtórz nowe hasło</value>
+  </data>
+  <data name="S14" xml:space="preserve">
+    <value>Zmień</value>
+  </data>
+  <data name="S15" xml:space="preserve">
+    <value>Strona główna</value>
+  </data>
+  <data name="S16" xml:space="preserve">
+    <value>Skany</value>
+  </data>
+  <data name="S17" xml:space="preserve">
+    <value>Dokumenty</value>
+  </data>
+  <data name="S18" xml:space="preserve">
+    <value>Ustawienia</value>
+  </data>
+  <data name="S19" xml:space="preserve">
+    <value>Użytkownicy</value>
+  </data>
+  <data name="S2" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="S20" xml:space="preserve">
+    <value>Dostępne skany</value>
+  </data>
+  <data name="S21" xml:space="preserve">
+    <value>Pobierz</value>
+  </data>
+  <data name="S22" xml:space="preserve">
+    <value>Odśwież</value>
+  </data>
+  <data name="S23" xml:space="preserve">
+    <value>Dodaj z dysku</value>
+  </data>
+  <data name="S24" xml:space="preserve">
+    <value>Kosz skanów</value>
+  </data>
+  <data name="S25" xml:space="preserve">
+    <value>Do kosza</value>
+  </data>
+  <data name="S26" xml:space="preserve">
+    <value>Zaznacz</value>
+  </data>
+  <data name="S27" xml:space="preserve">
+    <value>Odznacz</value>
+  </data>
+  <data name="S28" xml:space="preserve">
+    <value>Dane podstawowe</value>
+  </data>
+  <data name="S29" xml:space="preserve">
+    <value>Znak pisma</value>
+  </data>
+  <data name="S3" xml:space="preserve">
+    <value>Logowanie</value>
+  </data>
+  <data name="S30" xml:space="preserve">
+    <value>Teczka</value>
+  </data>
+  <data name="S31" xml:space="preserve">
+    <value>Data pisma</value>
+  </data>
+  <data name="S32" xml:space="preserve">
+    <value>Słowa kluczowe</value>
+  </data>
+  <data name="S33" xml:space="preserve">
+    <value>Kategorie</value>
+  </data>
+  <data name="S34" xml:space="preserve">
+    <value>Rodzaj</value>
+  </data>
+  <data name="S35" xml:space="preserve">
+    <value>Sklep</value>
+  </data>
+  <data name="S36" xml:space="preserve">
+    <value>Dane dodatkowe</value>
+  </data>
+  <data name="S37" xml:space="preserve">
+    <value>Nadawcy</value>
+  </data>
+  <data name="S38" xml:space="preserve">
+    <value>Lista dostępnych</value>
+  </data>
+  <data name="S39" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="S4" xml:space="preserve">
+    <value>Hasło</value>
+  </data>
+  <data name="S40" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="S41" xml:space="preserve">
+    <value>Dodatkowe informacje</value>
+  </data>
+  <data name="S42" xml:space="preserve">
+    <value>Załatwione</value>
+  </data>
+  <data name="S43" xml:space="preserve">
+    <value>Nowy nadawca</value>
+  </data>
+  <data name="S44" xml:space="preserve">
+    <value>Imię</value>
+  </data>
+  <data name="S45" xml:space="preserve">
+    <value>Nazwisko</value>
+  </data>
+  <data name="S46" xml:space="preserve">
+    <value>Firma</value>
+  </data>
+  <data name="S47" xml:space="preserve">
+    <value>NIP</value>
+  </data>
+  <data name="S48" xml:space="preserve">
+    <value>Kontakt</value>
+  </data>
+  <data name="S49" xml:space="preserve">
+    <value>Adres e-mail</value>
+  </data>
+  <data name="S5" xml:space="preserve">
+    <value>Pamiętaj mnie</value>
+  </data>
+  <data name="S50" xml:space="preserve">
+    <value>Telefon domowy</value>
+  </data>
+  <data name="S51" xml:space="preserve">
+    <value>Telefon służbowy</value>
+  </data>
+  <data name="S52" xml:space="preserve">
+    <value>Adres strony w sieci Web</value>
+  </data>
+  <data name="S53" xml:space="preserve">
+    <value>Telefon komórkowy</value>
+  </data>
+  <data name="S54" xml:space="preserve">
+    <value>Faks służbowy</value>
+  </data>
+  <data name="S55" xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="S56" xml:space="preserve">
+    <value>Ulica</value>
+  </data>
+  <data name="S57" xml:space="preserve">
+    <value>Budynek</value>
+  </data>
+  <data name="S58" xml:space="preserve">
+    <value>Lokal</value>
+  </data>
+  <data name="S59" xml:space="preserve">
+    <value>Kod pocztowy</value>
+  </data>
+  <data name="S6" xml:space="preserve">
+    <value>Witaj</value>
+  </data>
+  <data name="S60" xml:space="preserve">
+    <value>Miejscowość</value>
+  </data>
+  <data name="S61" xml:space="preserve">
+    <value>Poczta</value>
+  </data>
+  <data name="S62" xml:space="preserve">
+    <value>Inne</value>
+  </data>
+  <data name="S63" xml:space="preserve">
+    <value>Notatki</value>
+  </data>
+  <data name="S64" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="S65" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="S66" xml:space="preserve">
+    <value>Podgląd ostatnio zaznaczonego skanu</value>
+  </data>
+  <data name="S67" xml:space="preserve">
+    <value>Utwórz dokument</value>
+  </data>
+  <data name="S68" xml:space="preserve">
+    <value>Wyczyść formularz</value>
+  </data>
+  <data name="S69" xml:space="preserve">
+    <value>Przejdź do ostatnio utworzonego dokumentu</value>
+  </data>
+  <data name="S7" xml:space="preserve">
+    <value>Zmień hasło</value>
+  </data>
+  <data name="S70" xml:space="preserve">
+    <value>Dodaj skan</value>
+  </data>
+  <data name="S71" xml:space="preserve">
+    <value>Wybierz plik który chcesz dodać do listy</value>
+  </data>
+  <data name="S72" xml:space="preserve">
+    <value>Powrót do listy skanów</value>
+  </data>
+  <data name="S73" xml:space="preserve">
+    <value>Przywróć do listy skanów</value>
+  </data>
+  <data name="S74" xml:space="preserve">
+    <value>Usuń z kosza</value>
+  </data>
+  <data name="S75" xml:space="preserve">
+    <value>Pobrany</value>
+  </data>
+  <data name="S76" xml:space="preserve">
+    <value>godz</value>
+  </data>
+  <data name="S77" xml:space="preserve">
+    <value>Parametry wyszukiwania</value>
+  </data>
+  <data name="S78" xml:space="preserve">
+    <value>Data utworzenia [od] -[do]</value>
+  </data>
+  <data name="S79" xml:space="preserve">
+    <value>Data pisma [od] - [do]</value>
+  </data>
+  <data name="S8" xml:space="preserve">
+    <value>Wyloguj</value>
+  </data>
+  <data name="S80" xml:space="preserve">
+    <value>Fraza w treści</value>
+  </data>
+  <data name="S81" xml:space="preserve">
+    <value>Liczba elementów na stronie</value>
+  </data>
+  <data name="S82" xml:space="preserve">
+    <value>Wyszukaj dokument</value>
+  </data>
+  <data name="S83" xml:space="preserve">
+    <value>Wyniki wyszukiwania</value>
+  </data>
+  <data name="S84" xml:space="preserve">
+    <value>Data utworzenia</value>
+  </data>
+  <data name="S85" xml:space="preserve">
+    <value>Otwórz</value>
+  </data>
+  <data name="S86" xml:space="preserve">
+    <value>Strona</value>
+  </data>
+  <data name="S87" xml:space="preserve">
+    <value>Powrót do wyników wyszukiwania</value>
+  </data>
+  <data name="S88" xml:space="preserve">
+    <value>Edytuj dokument</value>
+  </data>
+  <data name="S89" xml:space="preserve">
+    <value>Autor</value>
+  </data>
+  <data name="S9" xml:space="preserve">
+    <value>Klient</value>
+  </data>
+  <data name="S90" xml:space="preserve">
+    <value>Historia edycji</value>
+  </data>
+  <data name="S91" xml:space="preserve">
+    <value>Dane dokumentu</value>
+  </data>
+  <data name="S92" xml:space="preserve">
+    <value>Dodaj skan z listy</value>
+  </data>
+  <data name="S93" xml:space="preserve">
+    <value>Dodaj skan z dysku</value>
+  </data>
+  <data name="S94" xml:space="preserve">
+    <value>Dodaj wersję z listy</value>
+  </data>
+  <data name="S95" xml:space="preserve">
+    <value>Dodaj wersję z dysku</value>
+  </data>
+  <data name="S96" xml:space="preserve">
+    <value>Wybierz skany</value>
+  </data>
+  <data name="S97" xml:space="preserve">
+    <value>Historia zmian dokumentu</value>
+  </data>
+  <data name="S98" xml:space="preserve">
+    <value>Data zmiany</value>
+  </data>
+  <data name="S99" xml:space="preserve">
+    <value>Edytor</value>
+  </data>
+  <data name="ValidationFieldMustBeNumeric" xml:space="preserve">
+    <value>Podana wartość musi być numeryczna</value>
+  </data>
+</root>

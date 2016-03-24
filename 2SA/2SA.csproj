@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{95D9A641-D092-4032-9880-831CAF06AC3B}</ProjectGuid>
+    <ProjectTypeGuids>{e53f8fea-eae0-44a6-8774-ffd645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eArchiver</RootNamespace>
+    <AssemblyName>eArchiver</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>true</MvcBuildViews>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Service|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'webapp|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPocalipse.IFilter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\EPocalipse.IFilter.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.Helpers" />
+    <Reference Include="wnvpdfcreator, Version=6.0.0.0, Culture=neutral, PublicKeyToken=5b5f377bc08a4d32, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\wnvpdfcreator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\ContextAuthorizeAttribute.cs" />
+    <Compile Include="Attributes\ModelStateTempDataTransfer.cs" />
+    <Compile Include="Attributes\QuotaAttribute.cs" />
+    <Compile Include="Constants\QuotaTypes.cs" />
+    <Compile Include="Constants\RoleNames.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AppContext.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CustomController.cs" />
+    <Compile Include="Controllers\DocumentsController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\Factories\ScanBrowserFactory.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\QuotaController.cs" />
+    <Compile Include="Controllers\ScansController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
+    <Compile Include="Helpers\HeadersHelper.cs" />
+    <Compile Include="Helpers\PredicateBuilder.cs" />
+    <Compile Include="Helpers\ScansHelper.cs" />
+    <Compile Include="JsonRequestBehaviorAttribute.cs" />
+    <Compile Include="LocalizedClientDataTypeModelValidatorProvider.cs" />
+    <Compile Include="Models\EArchiver.cs">
+      <DependentUpon>EArchiver.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EArchiverAdditions.cs" />
+    <Compile Include="Models\Entities\DocumentDetails.cs" />
+    <Compile Include="Models\Entities\PaginatedList.cs" />
+    <Compile Include="Models\Repositories\Dictionaries\DictionaryRepository.cs" />
+    <Compile Include="Models\Repositories\Documents\DocumentRepository.cs" />
+    <Compile Include="Models\Repositories\Headers\HeadersRepository.cs" />
+    <Compile Include="Models\Repositories\Quota\QuotaRepository.cs" />
+    <Compile Include="Models\Repositories\Scans\ScansRepository.cs" />
+    <Compile Include="Models\Repositories\Shared\ClientsRepository.cs" />
+    <Compile Include="Models\SearchCriterias\DocumentsSearchCriteria.cs" />
+    <Compile Include="Models\ViewModels\Account\EditUserViewModel.cs" />
+    <Compile Include="Models\ViewModels\Documents\DocumentDetailsViewModel.cs" />
+    <Compile Include="Models\ViewModels\Documents\DocumentEditViewModel.cs" />
+    <Compile Include="Models\ViewModels\Documents\DocumentScansViewModel.cs" />
+    <Compile Include="Models\ViewModels\Documents\DocumentSearchResult.cs" />
+    <Compile Include="Models\ViewModels\Documents\DocumentSearchViewModel.cs" />
+    <Compile Include="Models\ViewModels\Documents\DocumentsViewModel.cs" />
+    <Compile Include="Models\ViewModels\Documents\VersionBrowserViewModel.cs" />
+    <Compile Include="Models\ViewModels\Quota\QuotaViewModel.cs" />
+    <Compile Include="Models\ViewModels\Scans\ScanPreviewViewModel.cs" />
+    <Compile Include="Models\ViewModels\Scans\ScanSelectorViewModel.cs" />
+    <Compile Include="Models\ViewModels\Scans\ScansViewModel.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ActionLinkHelper.cs" />
+    <Compile Include="Helpers\IsCurrentActionHelper.cs" />
+    <Compile Include="Helpers\ModelsHelper.cs" />
+    <Compile Include="Helpers\NavigationContextHelper.cs" />
+    <Compile Include="Helpers\TextBoxHelper.cs" />
+    <Compile Include="Models\EArchiver.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EArchiver.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Repositories\Account\AccountMembershipService.cs" />
+    <Compile Include="Models\Repositories\Account\AccountRepository.cs" />
+    <Compile Include="Models\Repositories\Account\FormsAuthenticationService.cs" />
+    <Compile Include="Models\ViewModels\Account\EditGroupViewModel.cs" />
+    <Compile Include="Models\ViewModels\Account\GroupsViewModel.cs" />
+    <Compile Include="Models\ViewModels\Account\UsersViewModel.cs" />
+    <Compile Include="Models\ViewModels\Settings\DictionaryViewModel.cs" />
+    <Compile Include="Models\ViewModels\Scans\ScansBinViewModel.cs" />
+    <Compile Include="Models\ViewModels\Settings\TypesDictViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="rs.asmx.cs">
+      <DependentUpon>rs.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SetCultureFilter.cs" />
+    <Compile Include="Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\icons\backToResult.png" />
+    <Content Include="Content\icons\download.png" />
+    <Content Include="Content\icons\edit_doc.png" />
+    <Content Include="Content\images\error.png" />
+    <Content Include="Content\icons\error.gif" />
+    <Content Include="Content\icons\exclamation.gif" />
+    <Content Include="Content\icons\info.gif" />
+    <Content Include="Content\icons\new_sender.png" />
+    <Content Include="Content\icons\new_sender_small.png" />
+    <Content Include="Content\icons\next.png" />
+    <Content Include="Content\icons\prev.png" />
+    <Content Include="Content\icons\rotate_cancel.png" />
+    <Content Include="Content\icons\rotate_ok.png" />
+    <Content Include="Content\icons\sender_details.png" />
+    <Content Include="Content\icons\rotate_left.png" />
+    <Content Include="Content\icons\rotate_right.png" />
+    <Content Include="Content\icons\sender_details_small.png" />
+    <Content Include="Content\images\after.jpg" />
+    <Content Include="Content\icons\attachment.png" />
+    <Content Include="Content\images\before.jpg" />
+    <Content Include="Content\images\BodyBG.png" />
+    <Content Include="Content\images\ContentHeaderLeft.png" />
+    <Content Include="Content\images\ContentHeaderRight.png" />
+    <Content Include="Content\images\doc_h.png" />
+    <Content Include="Content\images\doc_v.png" />
+    <Content Include="Content\images\img_h.png" />
+    <Content Include="Content\images\img_v.png" />
+    <Content Include="Content\images\inne_h.png" />
+    <Content Include="Content\images\inne_v.png" />
+    <Content Include="Content\images\noPreview.gif" />
+    <Content Include="Content\icons\search_icon.png" />
+    <Content Include="Content\images\noPreview.png" />
+    <Content Include="Content\images\pdf_h.png" />
+    <Content Include="Content\images\pdf_v.png" />
+    <Content Include="Content\images\TabActiveLeft.png" />
+    <Content Include="Content\images\TabActiveRight.png" />
+    <Content Include="Content\images\TabInactiveLeft.png" />
+    <Content Include="Content\images\TabInactiveRight.png" />
+    <Content Include="Content\images\TitleLeft.png" />
+    <Content Include="Content\images\TitleRight.png" />
+    <Content Include="Content\icons\versions_icon.png" />
+    <Content Include="Default.aspx" />
+    <None Include="EPocalipse.IFilter.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="Global.asax" />
+    <None Include="gsdll32.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="rs.asmx" />
+    <Content Include="Scripts\datepicker\jquery.ui.datepicker-it.js" />
+    <Content Include="Scripts\datepicker\jquery.ui.datepicker-pl.js" />
+    <Content Include="Scripts\jquery-eArchiver.js" />
+    <Content Include="Scripts\jquery.livequery.js" />
+    <Content Include="Scripts\jquery.querystring.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\rotation.js" />
+    <Content Include="Scripts\stack.js" />
+    <Content Include="Scripts\ui.accordion.min.js" />
+    <Content Include="Scripts\ui.core.js" />
+    <Content Include="Scripts\ui.datepicker.js" />
+    <Content Include="Scripts\ui.dialog.min.js" />
+    <Content Include="Scripts\versionsBrowser.js" />
+    <None Include="tessnet2_32.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="Views\Account\Clients.aspx" />
+    <Content Include="Views\Account\EditClient.aspx" />
+    <Content Include="Views\Account\EditGroup.aspx" />
+    <Content Include="Views\Account\EditUser.aspx" />
+    <Content Include="Views\Account\Groups.aspx" />
+    <Content Include="Views\Account\Index.aspx" />
+    <Content Include="Views\Account\NewClient.aspx" />
+    <Content Include="Views\Account\NewGroup.aspx" />
+    <Content Include="Views\Account\NewUser.aspx" />
+    <Content Include="Views\Account\SetRemoteScansUserPassword.aspx" />
+    <Content Include="Views\Account\Users.aspx" />
+    <Content Include="Views\Documents\Details.aspx" />
+    <Content Include="Views\Documents\DocumentSearchUserControl.ascx" />
+    <Content Include="Views\Documents\Edit.aspx" />
+    <Content Include="Views\Documents\Index.aspx" />
+    <Content Include="Views\Documents\VersionBrowserUserControl.ascx" />
+    <Content Include="Views\Quota\Index.aspx" />
+    <Content Include="Views\Quota\QuotaInfoControl.ascx" />
+    <Content Include="Views\Scans\Index.aspx" />
+    <Content Include="Views\Scans\ScanPreviewUserControl.ascx" />
+    <Content Include="Views\Scans\ScanSelectorUserControl.ascx" />
+    <Content Include="Views\Settings\Categories.aspx" />
+    <Content Include="Views\Settings\CategoriesUserControl.ascx" />
+    <Content Include="Views\Settings\EditSender.aspx" />
+    <Content Include="Views\Settings\Headers.aspx" />
+    <Content Include="Views\Settings\Index.aspx" />
+    <Content Include="Views\Settings\NewSender.aspx" />
+    <Content Include="Views\Scans\ScansBin.aspx" />
+    <Content Include="Views\Settings\Senders.aspx" />
+    <Content Include="Views\Settings\SettingsSubsectionLinks.ascx" />
+    <Content Include="Views\Settings\Types.aspx" />
+    <Content Include="Views\Settings\TypesUserControl.ascx" />
+    <Content Include="Views\Shared\SenderUserControl.ascx" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Views\Account\ChangePassword.aspx" />
+    <Content Include="Views\Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Views\Account\LogOn.aspx" />
+    <Content Include="Views\Account\Register.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Shared\LogOnUserControl.ascx" />
+    <Content Include="Views\Shared\Site.Master" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Scripts\jquery-1.4.4.js" />
+    <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\EArchiver.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>EArchiver.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\2SARES\2SARES.csproj">
+      <Project>{5E7A0F3C-2989-43C9-A973-1A4F6ADDD5D2}</Project>
+      <Name>2SARES</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TiffManager\ScanManager.csproj">
+      <Project>{BF758D1B-C05A-4B68-8A54-E9A6205C10FE}</Project>
+      <Name>ScanManager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\howto\[2SA]Edycja_dokumentu.pdf" />
+    <Content Include="Content\howto\[2SA]Tworzenie_dokumentu.pdf" />
+    <Content Include="Content\howto\[2SA]Wyszukiwanie_i_przegladanie_dokumentow.pdf" />
+    <None Include="Models\EArchiver.dbml.layout">
+      <DependentUpon>EArchiver.dbml</DependentUpon>
+    </None>
+    <None Include="Models\EArchiver.dbml.views">
+      <DependentUpon>EArchiver.dbml</DependentUpon>
+    </None>
+    <Content Include="Content\icons\add.png" />
+    <Content Include="Content\icons\back.png" />
+    <Content Include="Content\icons\edit.png" />
+    <Content Include="Content\icons\forward.png" />
+    <Content Include="Content\icons\full.png" />
+    <Content Include="Content\icons\howto.png" />
+    <Content Include="Content\images\ajax-loader.gif" />
+    <Content Include="Content\images\cancel.png" />
+    <Content Include="Content\jqueryui\themes\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\jqueryui\themes\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\jqueryui\themes\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\jqueryui\themes\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\jqueryui\themes\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\jqueryui\themes\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\jqueryui\themes\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\jqueryui\themes\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\jqueryui\themes\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\jqueryui\themes\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\jqueryui\themes\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\jqueryui\themes\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\jqueryui\themes\ui-lightness\jquery-ui-1.8.7.custom.css" />
+    <Content Include="Scripts\date.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.7.custom.min.js" />
+    <Content Include="Scripts\MultiFile\jquery.MultiFile.js" />
+    <Content Include="Views\Documents\DocumentScans.aspx" />
+    <Content Include="Views\Documents\DocumentScansUserControl.ascx" />
+    <Content Include="Views\Documents\Search.aspx" />
+    <Content Include="Views\Documents\SearchControl.ascx" />
+    <Content Include="Views\Error\Http404Error.aspx" />
+    <Content Include="Views\Error\UnexpectedError.aspx" />
+    <Content Include="Views\Settings\DocumentHistory.aspx" />
+    <Content Include="Views\Settings\OCRService.aspx" />
+    <Content Include="Views\Settings\Types2.aspx" />
+    <Content Include="Views\Settings\Types2UserControl.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Models\EArchiver.dbml.views_def.layout">
+      <DependentUpon>EArchiver.dbml</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)\..\$(ProjectName)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>9876</DevelopmentServerPort>
+          <DevelopmentServerVPath>/2sa</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>

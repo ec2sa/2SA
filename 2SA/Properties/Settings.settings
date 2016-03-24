@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="eArchiver.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ScansRootDirectory" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">d:\AppFolders\2SAScans</Value>
+    </Setting>
+    <Setting Name="ScansSearchPattern" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">*.tif?;*.gif;*.jpg;*.jpeg;*.bmp;*.png;*.pdf</Value>
+    </Setting>
+    <Setting Name="MarkDistanceFromRight" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="MarkDistanceFromTop" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="MarkFontSize" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">14</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
