@@ -105,4 +105,3 @@ Z wyjątkiem ograniczonego celu jakim jest publiczne wskazanie, że Utwór zosta
 
 Z Creative Commons można skontaktować się pod adresem https://creativecommons.org/.
 
-« Powrót do Commons Deed
